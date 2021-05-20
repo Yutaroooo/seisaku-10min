@@ -1,0 +1,43 @@
+body {
+    color: #00004d;
+    background-color: #f0e8d8;
+}
+
+.tell h1 {
+    font-size: 75px;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.btn-wrap {
+    margin-top: 50px;
+}
+
+.btn-wrap p {
+    font-size: 50px;
+}
+
+.btn {
+    background: #f03c34;
+    border: 2px solid transparent;
+    color: #f0e8d8;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    max-width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.btn:focus,
+.btn:hover {
+    background: #f0e8d8;
+    border-color: currentColor;
+    color: #f03c34;
+}
