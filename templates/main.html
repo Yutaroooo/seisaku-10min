@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="10分でできること">
-	<meta name="description" content="あなたの隙間時間を有効に使いましょう">
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1">
-    <link rel="stylesheet" type="text/css" media="screen and ( min-width:769px )" href="../css/pc.css">
-	<link rel="stylesheet" type="text/css" media="screen and ( max-width:768px )" href="../css/sp.css">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     
 <div class="tell">
     <p>10分ガチャーーーーー<br>
@@ -17,20 +8,16 @@
     今から10分間、ガチャから出たことの内容にしたがって行動しましょう。</p>
     <h1>とにかく一回引け！</h1>
 </div>
-<div class="gacha">
-    <a href="#"><img src="../img/gachagacha_5299.png"alt=""></a>
-</div>
+
+<a href="/gacha"><img src="https://illust8.com/wp-content/uploads/2019/10/gachagacha_5299.png" alt="ガチャを引く"></a>
+
 <div class="btn-wrap">
     <p>カテゴリの中からガチャる↓</p>
-    <a href="#" class="btn">運動系</a>
-    <a href="#" class="btn">家事系</a>
-    <a href="#" class="btn">勉強系</a>
-    <a href="#" class="btn">　？　</a>
+    <a href="/gacha/undow" class="btn">運動系</a>
+    <a href="/gacha/kaji" class="btn">家事系</a>
+    <a href="/gacha/study" class="btn">勉強系</a>
+    <a href="/gacha/osusume" class="btn">　？　</a>
 </div>
 
 
-	<!-- テストイグノアできますか/
-	テスト2
-	テスト3 -->
-</body>
-</html>
+{% endblock %}
