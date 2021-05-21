@@ -3,12 +3,11 @@
 {% block content %}
 <h1>ガチャの結果。</h1>
 <p>今日はこれをやってみましょう。</p>
-<form action="/gacha" method="get">
-    <textarea name="result"></textarea><br>
-    <textarea name="word"></textarea><br>
-    <textarea name="link"></textarea><br>
+
+    <p name="result">{{result}}</p><br>
+    <p name="word">{{word}}</p><br>
+    <p name="link">{{link}}</p><br>
     <!-- <input type="submit" name="save" value="送信するよ"> -->
-</form>
 
 
 <div class="button">
