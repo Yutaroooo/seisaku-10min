@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, redirect, session ,url_for
-import sqlite3, random
+from flask import Flask, render_template, request, redirect, session, url_for
+import sqlite3
+import random
 
 app = Flask(__name__)
 app.secret_key = "sunabacokoza"
+
 
 @app.route("/")
 def main():
@@ -30,7 +32,8 @@ def gacha():
     else:
         link = ""
     c.close()
-    return render_template("gacha.html", result = result, word = word, link = link)
+    return render_template("gacha.html", result=result, word=word, link=link)
+
 
 @app.route("/gacha/undow")
 def undow():
@@ -52,7 +55,8 @@ def undow():
     else:
         link = ""
     c.close()
-    return render_template("gacha.html", result = result, word = word, link = link)
+    return render_template("gacha.html", result=result, word=word, link=link)
+
 
 @app.route("/gacha/kaji")
 def kaji():
@@ -74,7 +78,8 @@ def kaji():
     else:
         link = ""
     c.close()
-    return render_template("gacha.html", result = result, word = word, link = link)
+    return render_template("gacha.html", result=result, word=word, link=link)
+
 
 @app.route("/gacha/study")
 def study():
@@ -96,7 +101,8 @@ def study():
     else:
         link = ""
     c.close()
-    return render_template("gacha.html", result = result, word = word, link = link)
+    return render_template("gacha.html", result=result, word=word, link=link)
+
 
 @app.route("/gacha/osusume")
 def yaminabe():
@@ -118,8 +124,10 @@ def yaminabe():
     else:
         link = ""
     c.close()
-    return render_template("gacha.html", result = result, word = word, link = link)
-# ーーーーーーーーーーーーーーーーーーーーここまでガチャシステム
 
+    return render_template("gacha.html", result=result, word=word, link=link)
+
+
+# ーーーーーーーーーーーーーーーーーーーーここまでガチャシステム
 if __name__ == "__main__":
     app.run(debug=True)
