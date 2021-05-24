@@ -121,5 +121,23 @@ def yaminabe():
     return render_template("gacha.html", result = result, word = word, link = link)
 # ーーーーーーーーーーーーーーーーーーーーここまでガチャシステム
 
+@app.route("/adding")
+def adding():
+    return render_template("add.html")
+
+@app.route('/add',methods=["POST"])
+def add():
+    comment = request.form.get("comment")
+    conn = sqlite3.connect('gacha.db')
+    c = conn.cursor()
+    c.execute("INSERT INTO 'koumoku-t' VALUES (NULL, ?, NULL, NULL, NULL);", (comment,))
+    conn.commit()
+    conn.close()
+    return redirect("/kakunin")
+
+@app.route("/kakunin")
+def kakunin():
+    return render_template("kakunin.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
