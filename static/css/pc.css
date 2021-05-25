@@ -41,3 +41,15 @@ img {
     border-color: currentColor;
     color: #f03c34;
 }
+
+footer {
+    height: 50px;
+    background-color: #fff;
+}
+
+footer .copyright {
+    font-size: 12px;
+    padding-top: 17px;
+    letter-spacing: 1px;
+    text-align: center;
+}

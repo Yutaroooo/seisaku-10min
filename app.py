@@ -149,14 +149,9 @@ def add():
 def kakunin():
     return render_template("kakunin.html")
 
-@app.errorhandler(403)
-def mistake403(code):
-    return redirect("/")
-
 @app.errorhandler(404)
 def notfound404(code):
-    return redirect("/")
-
+    return render_template("404.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
