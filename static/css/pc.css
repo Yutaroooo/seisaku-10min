@@ -3,6 +3,12 @@ body {
     background-color: #f0e8d8;
 }
 
+main {
+    display: flex;
+    flex-flow: column;
+    min-height: 90vh;
+}
+
 .tell h1 {
     font-size: 75px;
 }
