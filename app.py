@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session, url_for
 import sqlite3
 import random
 
+
 app = Flask(__name__)
 app.secret_key = "sunabacokoza"
 
@@ -124,7 +125,6 @@ def yaminabe():
     else:
         link = ""
     c.close()
-
     return render_template("gacha.html", result=result, word=word, link=link)
 
 
@@ -149,9 +149,14 @@ def add():
 def kakunin():
     return render_template("kakunin.html")
 
+@app.errorhandler(403)
+def mistake403(code):
+    return redirect("/")
+
 @app.errorhandler(404)
 def notfound404(code):
-    return render_template("404.html")
+    return redirect("/")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
