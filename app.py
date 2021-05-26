@@ -118,7 +118,6 @@ def yaminabe():
             result = gacha[0]
         else:
             result = "None"
-
     if gacha[1] is not None:
         word = gacha[1]
     else:
@@ -140,6 +139,8 @@ def adding():
 @app.route("/add", methods=["POST"])
 def add():
     comment = request.form.get("comment")
+    if (comment == ""):
+        return redirect("/adding")
     conn = sqlite3.connect("gacha.db")
     c = conn.cursor()
     c.execute("INSERT INTO 'koumoku-t' VALUES (NULL, ?, NULL, NULL, 4);", (comment,))
