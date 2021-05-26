@@ -3,6 +3,12 @@ body {
     background-color: #f0e8d8;
 }
 
+main {
+    display: flex;
+    flex-flow: column;
+    min-height: 90vh;
+}
+
 .tell h1 {
     font-size: 50px;
 }
@@ -40,4 +46,16 @@ img {
     background: #f0e8d8;
     border-color: currentColor;
     color: #f03c34;
+}
+
+footer {
+    height: 50px;
+    background-color: #fff;
+}
+
+footer .copyright {
+    font-size: 12px;
+    padding-top: 17px;
+    letter-spacing: 1px;
+    text-align: center;
 }
