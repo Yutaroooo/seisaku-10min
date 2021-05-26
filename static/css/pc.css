@@ -10,6 +10,7 @@ main {
 }
 
 .tell h1 {
+    margin: -10px;
     font-size: 75px;
 }
 
