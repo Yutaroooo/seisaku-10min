@@ -141,9 +141,10 @@ def add():
     comment = request.form.get("comment")
     if (comment == ""):
         return redirect("/adding")
+    word = request.form.get("word")
     conn = sqlite3.connect("gacha.db")
     c = conn.cursor()
-    c.execute("INSERT INTO 'koumoku-t' VALUES (NULL, ?, NULL, NULL, 4);", (comment,))
+    c.execute("INSERT INTO 'koumoku-t' VALUES (NULL, ?, ?, NULL, 4);", (comment,word))
     conn.commit()
     conn.close()
     return redirect("/kakunin")
