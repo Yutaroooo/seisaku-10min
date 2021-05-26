@@ -107,15 +107,18 @@ def study():
 
 @app.route("/gacha/osusume")
 def yaminabe():
-    conn = sqlite3.connect("gacha.db")
-    c = conn.cursor()
-    c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" = 4;')
-    gacha = c.fetchall()
-    gacha = random.choice(gacha)
-    if gacha[0] is not None:
-        result = gacha[0]
-    else:
-        result = ""
+    result = "None"
+    while (result == "None"):
+        conn = sqlite3.connect("gacha.db")
+        c = conn.cursor()
+        c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" = 4;')
+        gacha = c.fetchall()
+        gacha = random.choice(gacha)
+        if (gacha[0] != ""):
+            result = gacha[0]
+        else:
+            result = "None"
+
     if gacha[1] is not None:
         word = gacha[1]
     else:
