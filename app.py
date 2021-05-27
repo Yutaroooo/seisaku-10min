@@ -17,7 +17,7 @@ def main():
 def gacha():
     conn = sqlite3.connect("gacha.db")
     c = conn.cursor()
-    c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" <= 3;')
+    c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" <= 4;')
     gacha = c.fetchall()
     gacha = random.choice(gacha)
     if gacha[0] is not None:
@@ -111,7 +111,7 @@ def yaminabe():
     while (result == "None"):
         conn = sqlite3.connect("gacha.db")
         c = conn.cursor()
-        c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" = 4;')
+        c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" <= 4;')
         gacha = c.fetchall()
         gacha = random.choice(gacha)
         if (gacha[0] != ""):
@@ -144,7 +144,7 @@ def add():
     word = request.form.get("word")
     conn = sqlite3.connect("gacha.db")
     c = conn.cursor()
-    c.execute("INSERT INTO 'koumoku-t' VALUES (NULL, ?, ?, NULL, 4);", (comment,word))
+    c.execute("INSERT INTO 'koumoku-t' VALUES (NULL, ?, ?, NULL, 5);", (comment,word))
     conn.commit()
     conn.close()
     return redirect("/kakunin")
@@ -159,4 +159,5 @@ def notfound404(code):
     return render_template("404.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.debug = True
+    app.run(host='0.0.0.0', port=5000) 

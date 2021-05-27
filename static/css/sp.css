@@ -35,7 +35,20 @@ img {
     display: inline-block;
     font-size: 15px;
     font-weight: bold;
-    padding: 12px 20px;
+    padding: 12px 0px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tsuika p .btn {
+    background: #f03c34;
+    border: 2px solid transparent;
+    color: #f0f0f0;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px 0px;
     text-align: center;
     width: 100%;
     margin: 0 auto;
