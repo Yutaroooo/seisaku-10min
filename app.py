@@ -19,7 +19,7 @@ def gacha():
     while (result == "None"):
         conn = sqlite3.connect("gacha.db")
         c = conn.cursor()
-        c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" >= 4;')
+        c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" <= 4;')
         gacha = c.fetchall()
         gacha = random.choice(gacha)
         if (gacha[0] != ""):
@@ -32,10 +32,28 @@ def gacha():
         word = ""
     if gacha[2] is not None:
         link = gacha[2]
+        length = (len(word) + len(result))
+        if (length >= 76):
+            nagasa = len(result)
+            nagasa = (77 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     else:
         link = ""
+        length = (len(word) + len(result))
+        if (length >= 85):
+            nagasa = len(result)
+            nagasa = (86 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     c.close()
-    return render_template("gacha.html", result=result, word=word, link=link)
+    return render_template("gacha.html", result=result, word=word, wordl = wordl, dot = dot, link=link)
 
 
 @app.route("/gacha/undow")
@@ -55,10 +73,28 @@ def undow():
         word = ""
     if gacha[2] is not None:
         link = gacha[2]
+        length = (len(word) + len(result))
+        if (length >= 76):
+            nagasa = len(result)
+            nagasa = (77 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     else:
         link = ""
+        length = (len(word) + len(result))
+        if (length >= 85):
+            nagasa = len(result)
+            nagasa = (86 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     c.close()
-    return render_template("gacha.html", result=result, word=word, link=link)
+    return render_template("gacha.html", result=result, word=word, wordl = wordl, dot = dot, link=link)
 
 
 @app.route("/gacha/kaji")
@@ -78,10 +114,28 @@ def kaji():
         word = ""
     if gacha[2] is not None:
         link = gacha[2]
+        length = (len(word) + len(result))
+        if (length >= 76):
+            nagasa = len(result)
+            nagasa = (77 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     else:
         link = ""
+        length = (len(word) + len(result))
+        if (length >= 85):
+            nagasa = len(result)
+            nagasa = (86 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     c.close()
-    return render_template("gacha.html", result=result, word=word, link=link)
+    return render_template("gacha.html", result=result, word=word, wordl = wordl, dot = dot, link=link)
 
 
 @app.route("/gacha/study")
@@ -101,10 +155,28 @@ def study():
         word = ""
     if gacha[2] is not None:
         link = gacha[2]
+        length = (len(word) + len(result))
+        if (length >= 76):
+            nagasa = len(result)
+            nagasa = (77 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     else:
         link = ""
+        length = (len(word) + len(result))
+        if (length >= 85):
+            nagasa = len(result)
+            nagasa = (86 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     c.close()
-    return render_template("gacha.html", result=result, word=word, link=link)
+    return render_template("gacha.html", result=result, word=word, wordl = wordl, dot = dot, link=link)
 
 
 @app.route("/gacha/osusume")
@@ -113,7 +185,7 @@ def yaminabe():
     while (result == "None"):
         conn = sqlite3.connect("gacha.db")
         c = conn.cursor()
-        c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" <= 4;')
+        c.execute('SELECT "やること", "一言", "リンク" FROM "koumoku-t" WHERE "yaru-id" >= 4;')
         gacha = c.fetchall()
         gacha = random.choice(gacha)
         if (gacha[0] != ""):
@@ -126,10 +198,28 @@ def yaminabe():
         word = ""
     if gacha[2] is not None:
         link = gacha[2]
+        length = (len(word) + len(result))
+        if (length >= 76):
+            nagasa = len(result)
+            nagasa = (77 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     else:
         link = ""
+        length = (len(word) + len(result))
+        if (length >= 85):
+            nagasa = len(result)
+            nagasa = (86 - nagasa)
+            wordl = (word[0:nagasa])
+            dot = "…"
+        else:
+            wordl = (word)
+            dot = ""
     c.close()
-    return render_template("gacha.html", result=result, word=word, link=link)
+    return render_template("gacha.html", result=result, word=word, wordl = wordl, dot = dot, link=link)
 
 
 # ーーーーーーーーーーーーーーーーーーーーここまでガチャシステム
